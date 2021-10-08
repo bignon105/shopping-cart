@@ -6,7 +6,7 @@ const checkToken = (req, res, next) => {
 
   if (typeof header !== 'undefined') {
     const bearer = header.split(' ');
-    const token = bearer[1];
+
 
     jwt.verify(token, process.env.PRIVATE_KEY, (err, data) => {
       if (err) {
